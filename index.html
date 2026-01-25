@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Nunes - Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.3;
+            color: #000;
+            background: #f5f5f5;
+            font-size: 10.5pt;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 0.75in;
+            min-height: 297mm;
+            position: relative;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+            .container {
+                padding: 0.5in;
+                margin: 0;
+            }
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 8px;
+        }
+
+        .header h1 {
+            font-size: 20pt;
+            font-weight: bold;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+
+        .header .title {
+            font-size: 11pt;
+            margin-bottom: 6px;
+            font-weight: normal;
+        }
+
+        .contact {
+            font-size: 9.5pt;
+            line-height: 1.4;
+        }
+
+        .contact a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Headers */
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+        }
+
+        /* Summary */
+        .summary {
+            text-align: justify;
+            line-height: 1.4;
+        }
+
+        /* Skills */
+        .skills-grid {
+            line-height: 1.5;
+        }
+
+        .skill-category {
+            margin-bottom: 4px;
+        }
+
+        .skill-category strong {
+            font-weight: bold;
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 10px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .job-title-company {
+            font-weight: bold;
+            font-size: 10.5pt;
+        }
+
+        .job-date {
+            font-style: italic;
+            font-size: 9.5pt;
+            color: #333;
+        }
+
+        .job-position {
+            font-style: italic;
+            margin-bottom: 4px;
+            font-size: 10pt;
+        }
+
+        .job ul {
+            margin-left: 18px;
+            margin-top: 3px;
+        }
+
+        .job li {
+            margin-bottom: 3px;
+            line-height: 1.35;
+        }
+
+        /* Projects */
+        .project {
+            margin-bottom: 8px;
+        }
+
+        .project-header {
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .project-header a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .project-description {
+            line-height: 1.4;
+        }
+
+        .project ul {
+            margin-left: 18px;
+            margin-top: 3px;
+        }
+
+        .project li {
+            margin-bottom: 3px;
+            line-height: 1.35;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 6px;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .education-school {
+            font-weight: bold;
+        }
+
+        .education-date {
+            font-style: italic;
+            font-size: 9.5pt;
+            color: #333;
+        }
+
+        .education-degree {
+            font-size: 10pt;
+        }
+
+        /* Metrics highlighting */
+        strong.metric {
+            font-weight: bold;
+        }
+
+        /* Language Toggle */
+        #english-version {
+            display: block;
+        }
+
+        #portuguese-version {
+            display: none;
+        }
+
+    </style>
+    <script>
+        // Language Toggle Logic
+        let isEnglish = true;
+        
+        function toggleLanguage() {
+            const portugueseVersions = document.querySelectorAll('#portuguese-version');
+            const englishVersions = document.querySelectorAll('#english-version');
+            
+            isEnglish = !isEnglish;
+            
+            englishVersions.forEach(englishVersion => {
+                englishVersion.style.display = isEnglish ? 'block' : 'none';
+            });
+
+            portugueseVersions.forEach(portugueseVersion => {
+                portugueseVersion.style.display = isEnglish ? 'none' : 'block';
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container" id="resume-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>ARTHUR VINICIUS CARNEIRO NUNES</h1>
+            <div class="title" id="english-version">Full Stack Developer</div>
+            <div class="title" id="portuguese-version">Desenvolvedor Full Stack</div>
+            <div class="contact" id="english-version">
+                <a href="mailto:arthurvininunes@gmail.com">arthurvininunes@gmail.com</a> |
+                <a href="https://linkedin.com/in/arthurvininunes" target="_blank">linkedin.com/in/arthurvininunes</a> |
+                <a href="https://github.com/apenasumsonhador" target="_blank">github.com/apenasumsonhador</a> |
+                <br>
+                <a href="#" onclick="toggleLanguage();">🇧🇷 / 🇵🇹 versão em português do Curriculum Vitae</a> |
+                <a href="#" onclick="window.print(); return false;">🖨️ Print</a>
+            </div>
+            <div class="contact" id="portuguese-version">
+                <a href="mailto:arthurvininunes@gmail.com">arthurvininunes@gmail.com</a> |
+                <a href="https://linkedin.com/in/arthurvininunes" target="_blank">linkedin.com/in/arthurvininunes</a> |
+                <a href="https://github.com/apenasumsonhador" target="_blank">github.com/apenasumsonhador</a> |
+                <br>
+                <a href="#" onclick="toggleLanguage();"> 🇺🇸 / 🇬🇧 English Curriculum Vitae version</a> |
+                <a href="#" onclick="window.print(); return false;">🖨️ Imprimir</a>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+
+            <!-- English Version -->
+            <div class="section-title" id="english-version">Professional Summary</div>
+            <div class="summary" id="english-version">
+                Full Stack Developer with <strong>2+ years</strong> of professional experience designing, developing, and maintaining modern web applications using the <strong>JavaScript/TypeScript</strong> ecosystem. Strong expertise in Frontend development with <strong>React</strong> and <strong>Vue.js</strong>, building responsive, component-driven UIs with <strong>HTML</strong>, <strong>CSS</strong>, and <strong>modern state management patterns</strong>. Proven experience in Backend development using <strong>Node.js</strong>, implementing <strong>RESTful APIs</strong>, <strong>authentication flows</strong>, and data access layers with <strong>Prisma ORM</strong> and relational databases (<strong>PostgreSQL</strong> and <strong>MySQL</strong>).
+                Hands-on experience with containerized applications using <strong>Docker</strong>, enabling consistent development and deployment environments. Familiar with Git-based workflows (<strong>Git Flow</strong>) and <strong>Agile methodologies</strong>, collaborating in distributed teams and managing tasks through tools such as <strong>Jira</strong>. Solid foundation in <strong>SQL</strong>, <strong>database modeling</strong>, and <strong>ETL concepts</strong>, supported by academic and professional exposure to <strong>Python</strong> and data-oriented workflows.
+                Background in <strong>international collaboration</strong> and <strong>technical communication</strong>, including professional experience translating and localizing software platforms for English–Portuguese audiences. Strong <strong>problem-solving skills</strong>, <strong>fast learner</strong>, and <strong>proactive</strong> team contributor, currently pursuing a B.Sc. in Computer Science with continuous focus on software engineering best practices, system architecture, and scalable application design.
+            </div>
+
+            <!-- Portuguese Version -->
+            <div class="section-title" id="portuguese-version">Resumo Profissional</div>
+            <div class="summary" id="portuguese-version">
+                Desenvolvedor Full Stack com <strong>2+ anos</strong> de experiência profissional projetando, desenvolvendo e mantendo aplicações web modernas utilizando o ecossistema <strong>JavaScript/TypeScript</strong>. Forte especialização em desenvolvimento Frontend com <strong>React</strong> e <strong>Vue.js</strong>, construindo interfaces responsivas e orientadas a componentes com <strong>HTML</strong>, <strong>CSS</strong> e <strong>padrões modernos de gerenciamento de estado</strong>. Experiência comprovada em desenvolvimento Backend utilizando <strong>Node.js</strong>, implementando <strong>APIs RESTful</strong>, <strong>fluxos de autenticação</strong> e camadas de acesso a dados com <strong>Prisma ORM</strong> e bancos de dados relacionais (<strong>PostgreSQL</strong> e <strong>MySQL</strong>).
+                Experiência prática com aplicações conteinerizadas utilizando <strong>Docker</strong>, possibilitando ambientes consistentes de desenvolvimento e deploy. Familiaridade com fluxos de trabalho baseados em Git (<strong>Git Flow</strong>) e <strong>metodologias Ágeis</strong>, colaborando em times distribuídos e gerenciando tarefas por meio de ferramentas como <strong>Jira</strong>. Base sólida em <strong>SQL</strong>, <strong>modelagem de bancos de dados</strong> e <strong>conceitos de ETL</strong>, sustentada por vivência acadêmica e profissional com <strong>Python</strong> e fluxos de trabalho orientados a dados.
+                Experiência em <strong>colaboração internacional</strong> e <strong>comunicação técnica</strong>, incluindo atuação profissional na tradução e localização de plataformas de software para públicos de língua inglesa e portuguesa. Forte capacidade de <strong>resolução de problemas</strong>, <strong>aprendizado rápido</strong> e contribuição <strong>proativa</strong> em equipe, atualmente cursando Bacharelado em Ciência da Computação com foco contínuo em boas práticas de engenharia de software, arquitetura de sistemas e design de aplicações escaláveis.
+            </div>
+        
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+
+            <!-- English Version -->
+            <div class="section-title" id="english-version">Technical Skills</div>
+            <div class="skills-grid" id="english-version">
+                <div class="skill-category"><strong>AI & Data:</strong> LLM Integration (GPT-4, Copilot), Prompt Engineering</div>
+                <div class="skill-category"><strong>Languages & Frameworks:</strong> TypeScript, JavaScript, Node.js (Express.js), Python, Java, React, Vue, Prisma ORM</div>
+                <div class="skill-category"><strong>Data & Infrastructure:</strong> PostgreSQL, REST APIs, WebSockets</div>
+                <div class="skill-category"><strong>Cloud & DevOps:</strong> Docker, CI/CD (GitHub Actions, Vercel)</div>
+                <div class="skill-category"><strong>Testing & Practices:</strong> Jest, React Testing Library, Agile/Scrum, Microservices</div>
+            </div>
+
+            <!-- Portuguese Version -->
+            <div class="section-title" id="portuguese-version">Habilidades Técnicas</div>
+            <div class="skills-grid" id="portuguese-version">
+                <div class="skill-category"><strong>AI & Dados:</strong> Integração com LLM (GPT-4, Copilot), Engenharia de Prompts</div>
+                <div class="skill-category"><strong>Linguagens & Frameworks:</strong> TypeScript, JavaScript, Node.js (Express.js), Python, Java, React, Vue, Prisma ORM</div>
+                <div class="skill-category"><strong>Dados & Infraestrutura:</strong> PostgreSQL, REST APIs, WebSockets</div>
+                <div class="skill-category"><strong>Cloud & DevOps:</strong> Docker, CI/CD (GitHub Actions, Vercel)</div>
+                <div class="skill-category"><strong>Testes & Práticas:</strong> Jest, React Testing Library, Ágil/Scrum, Microsserviços</div>
+            </div>
+
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="section">
+            <div class="section-title" id="english-version">Professional Experience</div>
+            <div class="section-title" id="portuguese-version">Experiência Profissional</div>
+
+            <!-- TEVOS Solutions -->
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-company">TEVOS Solutions</div>
+                    <div class="job-date" id="english-version">May 2025 - September 2025</div>
+                    <div class="job-date" id="portuguese-version">Maio 2025 - Setembro 2025</div>
+                </div>
+                <div class="job-position" id="english-version">Full Stack Developer</div>
+                <div class="job-position" id="portuguese-version">Desenvolvedor Full Stack</div>
+
+                <!-- English Version -->
+                <ul id="english-version">
+                   <li>Developed a Full Stack application for <strong>AI-assisted automated</strong> customer service (tele-attendance), building <strong>Frontend interfaces</strong> with <strong>React</strong> and <strong>TypeScript</strong> and integrating them with backend services via <strong>RESTful APIs</strong></li>
+
+                    <li>Designed and implemented backend <strong>microservices</strong> using <strong>Node.js</strong>, focusing on service isolation, scalability, and clear API contracts for communication between frontend and backend components</li>
+
+                    <li>Implemented <strong>data access layers</strong> using <strong>Prisma ORM</strong>, mapping application entities to a <strong>PostgreSQL</strong> relational database and ensuring <strong>data consistency</strong> and <strong>integrity</strong> across service boundaries</li>
+
+                    <li>Collaborated on defining and evolving <strong>database schemas</strong>, managing migrations and relational constraints to support automated service workflows</li>
+
+                    <li>Containerized microservices using <strong>Docker</strong>, enabling consistent local development environments and simplifying deployment in distributed and remote team setups</li>
+
+                </ul>
+
+                <!-- Portuguese Version -->
+                <ul id="portuguese-version">
+                    <li>Desenvolveu uma aplicação Full Stack para <strong>atendimento automatizado assistido por IA</strong>, construindo <strong>interfaces Frontend</strong> com <strong>React</strong> e <strong>TypeScript</strong> e integrando-as a serviços de backend por meio de <strong>APIs RESTful</strong></li>
+
+                    <li>Projetou e implementou <strong>microserviços</strong> de backend utilizando <strong>Node.js</strong>, com foco em isolamento de serviços, escalabilidade e contratos de API claros para a comunicação entre componentes de frontend e backend</li>
+
+                    <li>Implementou <strong>camadas de acesso a dados</strong> utilizando <strong>Prisma ORM</strong>, mapeando entidades da aplicação para um banco de dados relacional <strong>PostgreSQL</strong> e garantindo <strong>consistência</strong> e <strong>integridade dos dados</strong> entre os limites dos serviços</li>
+
+                    <li>Colaborou na definição e evolução de <strong>esquemas de banco de dados</strong>, gerenciando migrações e restrições relacionais para dar suporte a fluxos de trabalho de serviços automatizados</li>
+
+                    <li>Containerizou microserviços utilizando <strong>Docker</strong>, possibilitando ambientes de desenvolvimento local consistentes e simplificando o processo de implantação em configurações de equipes distribuídas e remotas</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-company">PC4 Comunicação e Tecnologia</div>
+                    <div class="job-date" id="english-version">February 2024 - April 2025</div>
+                    <div class="job-date" id="portuguese-version">Fevereiro 2024 - Abril 2025</div>
+                </div>
+                <div class="job-position" id="english-version">Full Stack Developer</div>
+                <div class="job-position" id="portuguese-version">Desenvolvedor Full Stack</div>
+
+                <!-- English Version -->
+                <ul id="english-version">
+                    <li>Designed and implemented <strong>Frontend modules</strong> with <strong>Vue.js</strong> and <strong>TypeScript</strong>, following component-based architecture principles and integrating views with backend services via <strong>RESTful APIs</strong></li>
+
+                    <li>Contributed to <strong>Backend development</strong> using <strong>PHP</strong> and <strong>Laravel</strong>, applying the <strong>MVC architectural pattern</strong> to structure business logic, controllers, and data access layers</li>
+
+                    <li>Ensured <strong>data consistency and integrity</strong> by designing relational schemas and managing <strong>CRUD</strong> operations in <strong>MySQL</strong>, aligning database models with application domain rules</li>
+
+                    <li>Collaborated in an <strong>Agile workflow</strong> using <strong>Jira</strong> and <strong>Git Flow</strong>, participating in code reviews and coordinated releases across frontend and backend teams</li>
+                </ul>
+
+                <!-- Portuguese Version -->
+                <ul id="portuguese-version">
+                    <li>Projetou e implementou <strong>módulos de Frontend</strong> com <strong>Vue.js</strong> e <strong>TypeScript</strong>, seguindo princípios de arquitetura baseada em componentes e integrando as views a serviços de backend por meio de <strong>APIs RESTful</strong></li>
+
+                    <li>Contribuiu para o <strong>desenvolvimento de Backend</strong> utilizando <strong>PHP</strong> e <strong>Laravel</strong>, aplicando o <strong>padrão arquitetural MVC</strong> para estruturar a lógica de negócio, controladores e camadas de acesso a dados</li>
+
+                    <li>Garantiu <strong>consistência e integridade dos dados</strong> por meio do desenho de esquemas relacionais e do gerenciamento de operações <strong>CRUD</strong> em <strong>MySQL</strong>, alinhando os modelos de banco de dados às regras de domínio da aplicação</li>
+
+                    <li>Colaborou em um <strong>fluxo de trabalho Ágil</strong> utilizando <strong>Jira</strong> e <strong>Git Flow</strong>, participando de revisões de código e de releases coordenados entre as equipes de frontend e backend</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-company">Colonist</div>
+                    <div class="job-date" id="english-version">July 2024 - October 2025</div>
+                    <div class="job-date" id="portuguese-version">Julho 2024 - Outubro 2025</div>
+                </div>
+                <div class="job-position" id="english-version">Translator</div>
+                <div class="job-position" id="portuguese-version">Tradutor</div>
+
+                <!-- English Version -->
+                <ul id="english-version">
+                    <li>Participated in the <strong>software localization pipeline</strong> of a production web application, contributing to the adaptation of UI texts and user-facing content from <strong>English to Portuguese</strong> with strong awareness of application behavior and user flows</li>
+
+                    <li>Worked with <strong>international development teams</strong> through <strong>Crowdin</strong>, aligning translations with <strong>versioned string resources</strong>, feature updates, and release cycles</li>
+
+                    <li>Applied <strong>software development knowledge</strong> to maintain consistency of technical terminology, UI constraints, and functional intent, ensuring translated content integrated correctly into the application without breaking layouts or workflows</li>
+
+                    <li>Supported <strong>international product releases</strong> by collaborating asynchronously with developers and reviewers, strengthening cross-functional communication in a remote, engineering-driven environment</li>
+                </ul>
+
+                <!-- Portuguese Version -->
+                <ul id="portuguese-version">
+                    <li>Participou do <strong>pipeline de localização de software</strong> de uma aplicação web em produção, contribuindo para a adaptação de textos de interface e conteúdos voltados ao usuário de <strong>inglês para português</strong>, com forte compreensão do comportamento da aplicação e dos fluxos de uso</li>
+
+                    <li>Trabalhou com <strong>equipes internacionais de desenvolvimento</strong> por meio do <strong>Crowdin</strong>, alinhando traduções a <strong>recursos de strings versionados</strong>, atualizações de funcionalidades e ciclos de release</li>
+
+                    <li>Aplicou <strong>conhecimentos de desenvolvimento de software</strong> para manter a consistência da terminologia técnica, restrições de UI e intenção funcional, garantindo que o conteúdo traduzido fosse corretamente integrado à aplicação sem quebrar layouts ou fluxos de trabalho</li>
+
+                    <li>Deu suporte a <strong>lançamentos internacionais de produto</strong> por meio de colaboração assíncrona com desenvolvedores e revisores, fortalecendo a comunicação multifuncional em um ambiente remoto e orientado à engenharia</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Education & Languages English version -->
+        <div class="section" id="english-version">
+            <div class="section-title">Education & Languages</div>
+            <div class="education-item">
+                <strong>Bachelor's Degree in Computer Science</strong> | UFC (Universidade Federal do Ceará) | 2023 - 2027
+            </div>
+            <div class="education-item" style="margin-top: 4px;">
+                <strong>Languages:</strong> English (Fluent - Professional Working Proficiency), Portuguese (Native)
+            </div>
+        </div>
+
+        <!-- Education & Languages Portuguese version -->
+        <div class="section" id="portuguese-version">
+            <div class="section-title">Educação & Idiomas</div>
+            <div class="education-item">
+                <strong>Bacharelado em Ciência da Computação</strong> | UFC (Universidade Federal do Ceará) | 2023 - 2027
+            </div>
+            <div class="education-item" style="margin-top: 4px;">
+                <strong>Idiomas:</strong> Inglês (Fluente - Proficiência Profissional), Português (Nativo)
+            </div>
+        </div>
+    </div>
+</body>
+</html>
